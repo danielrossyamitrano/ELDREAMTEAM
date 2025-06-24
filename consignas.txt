@@ -15,7 +15,7 @@ Utilizar funciones y estructurar código en archivos e incorporarlos con import.
 
 Instrucciones:
 Crear un proyecto en una carpeta que contenga el archivo `error.wav`.
-Inicializar Pygame y crear la ventana principal con tamaño 800x600.
+
 Definir colores, fuente, y cargar el sonido de error usando pygame.mixer.
 Crear una función `mostrar_texto()` para mostrar texto en pantalla con coordenadas.
 Crear una función `dibujar_cruces(errores)` que dibuje una cruz roja por cada error cometido (máximo 4).
