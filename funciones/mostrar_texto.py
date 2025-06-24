@@ -1,4 +1,5 @@
-from main import *
+from pygame import font
+import pygame
 
 def mostrar_texto(texto, color):
     """
