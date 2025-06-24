@@ -1,8 +1,11 @@
 from pygame import KEYDOWN, KEYUP, MOUSEBUTTONDOWN, MOUSEBUTTONUP, QUIT
 from pygame import K_ESCAPE
-from pygame import event, quit, display
+from pygame import init, event, quit, display, mixer
 from sys import exit
 
+
+init()
+mixer.init()
 fondo = display.set_mode((800, 600))
 
 
