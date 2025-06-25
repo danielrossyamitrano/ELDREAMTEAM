@@ -1,6 +1,7 @@
 from pygame import KEYDOWN
 from data import *
 from funciones import *
+from funciones.mostrar_texto import mostrar_texto
 
 def jugar(numero, number, guesses, event, fondo, fondo_rect):
     message_img, message_rect = None, None
@@ -24,4 +25,4 @@ def jugar(numero, number, guesses, event, fondo, fondo_rect):
             message_img = mostrar_texto('¡Ganaste!', COLOR_VERDE)
             message_rect = message_img.get_rect(center=fondo_rect.center)
 
-    return message_img, message_rect
+    return guesses, message_img, message_rect

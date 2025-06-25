@@ -23,7 +23,7 @@ while True:  # main loop.
             # si el usuario toca la tecla escape o clickea la cruz, se cierra el juego.
             salir()  # la función salir() unifica las llamadas a pygame.quit() y sys.exit()
 
-        jugar(numero, number, guesses, e, fondo, fondo_rect)
+        guesses, message_img, message_rect = jugar(numero, number, guesses, e, fondo, fondo_rect)
         # jugar() toma el input del usuario y lo procesa siguiendo los requerimientos del juego.
 
     if message_img is not None:  # si el usuario ganó o perdió, se imprime el siguiente mensaje
