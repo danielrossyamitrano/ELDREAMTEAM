@@ -3,6 +3,7 @@ from data import *
 from funciones import *
 from funciones.mostrar_texto import mostrar_texto
 
+
 def jugar(numero, number, guesses, evento):
     message_img, message_rect = None, None
     fondo = display.get_surface()
