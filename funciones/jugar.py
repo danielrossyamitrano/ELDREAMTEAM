@@ -1,13 +1,15 @@
-from pygame import KEYDOWN
+from pygame import KEYDOWN, display, key
 from data import *
 from funciones import *
 from funciones.mostrar_texto import mostrar_texto
 
-def jugar(numero, number, guesses, event, fondo, fondo_rect):
+def jugar(numero, number, guesses, evento):
     message_img, message_rect = None, None
-    if event.type == KEYDOWN:
-        if event.key in key_numbers:
-            number = event.unicode
+    fondo = display.get_surface()
+    fondo_rect = fondo.get_rect()
+    if evento.type == KEYDOWN:
+        if evento.key in key_numbers:
+            number = key.name(evento.key).strip('[]')
             render = mostrar_texto(number, COLOR_NEGRO)
             render_rect = render.get_rect(center=fondo_rect.center)
             fondo.fill(COLOR_BLANCO, render_rect)
@@ -24,5 +26,7 @@ def jugar(numero, number, guesses, event, fondo, fondo_rect):
         elif number == numero:
             message_img = mostrar_texto('¡Ganaste!', COLOR_VERDE)
             message_rect = message_img.get_rect(center=fondo_rect.center)
+
+    display.update()
 
     return guesses, message_img, message_rect
