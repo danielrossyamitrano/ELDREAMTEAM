@@ -1,7 +1,6 @@
 from pygame import KEYDOWN, display, key
-from data import *
 from funciones import *
-from funciones.mostrar_texto import mostrar_texto
+from data import *
 
 
 def jugar(numero, number, guesses, evento):
@@ -13,8 +12,9 @@ def jugar(numero, number, guesses, evento):
             number = key.name(evento.key).strip('[]')
             render = mostrar_texto(number, COLOR_NEGRO)
             render_rect = render.get_rect(center=fondo_rect.center)
-            fondo.fill(COLOR_BLANCO, render_rect)
+            fondo.blit(eraser, eraser_rect)
             fondo.blit(render, render_rect)
+            display.update()
 
     if number is not None and guesses < 4:
         if number != numero:
